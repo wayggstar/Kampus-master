@@ -1,12 +1,12 @@
 [variables]
 NIXPACKS_JDK_VERSION = "17"
-NODE_ENV = "production"
+_JAVA_OPTIONS = "-Xmx384m -XX:MaxMetaspaceSize=192m"
 
 [phases.install]
 cmds = ["chmod +x gradlew"]
 
 [phases.build]
-cmds = ["./gradlew build -x test --no-daemon"]
+cmds = ["./gradlew clean build -x test --no-daemon"]
 
 [start]
 cmd = "java -jar build/libs/*.jar"
