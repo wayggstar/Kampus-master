@@ -73,27 +73,16 @@
             <label class="form-label small fw-bold">이름</label>
             <input type="text" name="name" class="form-control" placeholder="실명을 입력하세요" required>
         </div>
+
         <div class="teacher-badge mb-4">
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" name="isTeacher" id="teacherCheck" value="true" onchange="toggleTeacherCode()">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="isTeacher" id="teacherCheck" value="true">
                 <label class="form-check-label fw-bold" for="teacherCheck">
                     선생님으로 가입하기
                 </label>
-            </div>
-
-            <div id="teacherCodeSection" style="display: none;">
-                <label class="form-label small fw-bold text-danger">선생님 인증 코드</label>
-                <input type="password" name="teacherCode" class="form-control form-control-sm" placeholder="인증 코드를 입력하세요">
+                <div class="form-text mt-1">체크하시면 학생 관리 기능을 사용할 수 있습니다.</div>
             </div>
         </div>
-
-        <script>
-            function toggleTeacherCode() {
-                const checkBox = document.getElementById("teacherCheck");
-                const codeSection = document.getElementById("teacherCodeSection");
-                codeSection.style.display = checkBox.checked ? "block" : "none";
-            }
-        </script>
 
         <button type="submit" class="btn btn-primary btn-register w-100 text-white mb-3">가입하기</button>
 
@@ -103,6 +92,26 @@
         </div>
     </form>
 </div>
+<div class="teacher-badge mb-4">
+    <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" name="isTeacher" id="teacherCheck" value="true" onchange="toggleTeacherCode()">
+        <label class="form-check-label fw-bold" for="teacherCheck">
+            선생님으로 가입하기
+        </label>
+    </div>
 
+    <div id="teacherCodeSection" style="display: none;">
+        <label class="form-label small fw-bold text-danger">선생님 인증 코드</label>
+        <input type="password" name="teacherCode" class="form-control form-control-sm" placeholder="인증 코드를 입력하세요">
+    </div>
+</div>
+
+<script>
+    function toggleTeacherCode() {
+        const checkBox = document.getElementById("teacherCheck");
+        const codeSection = document.getElementById("teacherCodeSection");
+        codeSection.style.display = checkBox.checked ? "block" : "none";
+    }
+</script>
 </body>
 </html>
